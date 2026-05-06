@@ -135,21 +135,12 @@ http://localhost:8080/api/books
 
 If security login is enabled, use:
 
-- Username: `user`
-- Password: (check console log when app starts OR your Spring Security config)
+- Username: `admin`
+- Password: `admin123`
 
 ---
 
-### Step 6: Login (If Prompted)
 
-If Spring Security asks for login:
-- Enter username and password from console log or config
-
-Example:
-- Username: `user`
-- Password: auto-generated (shown in terminal on startup)
-
----
 
 ## 📡 6. REST API ENDPOINTS
 
