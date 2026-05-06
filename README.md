@@ -71,7 +71,7 @@ spring.application.name=reading-list
 
 spring.datasource.url=jdbc:mysql://localhost:3306/arl_db
 spring.datasource.username=root
-spring.datasource.password=YOUR_PASSWORD
+spring.datasource.password=
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 spring.jpa.hibernate.ddl-auto=update
@@ -98,9 +98,19 @@ Create database:
 CREATE DATABASE arl_db;
 ```
 
+---
+
 ### Step 3: Configure Project
 - Open project in IntelliJ IDEA
-- Set MySQL username & password in `application.properties`
+- Go to `src/main/resources/application.properties`
+- Set MySQL credentials:
+
+```properties
+spring.datasource.username=root
+spring.datasource.password=YOUR_PASSWORD
+```
+
+---
 
 ### Step 4: Run Application
 Run:
@@ -112,6 +122,32 @@ Expected output:
 ```
 Tomcat started on port 8080
 ```
+
+---
+
+### Step 5: Access Application (Browser / Postman)
+
+Open browser:
+
+```
+http://localhost:8080/api/books
+```
+
+If security login is enabled, use:
+
+- Username: `user`
+- Password: (check console log when app starts OR your Spring Security config)
+
+---
+
+### Step 6: Login (If Prompted)
+
+If Spring Security asks for login:
+- Enter username and password from console log or config
+
+Example:
+- Username: `user`
+- Password: auto-generated (shown in terminal on startup)
 
 ---
 
@@ -146,8 +182,6 @@ PUT /api/books/{id}
 ```
 DELETE /api/books/{id}
 ```
-
----
 
 ## 🧪 7. Postman Testing Guide
 
