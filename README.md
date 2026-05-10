@@ -198,6 +198,7 @@ All `/api/books/**` endpoints are protected.
 ---
 
 ## ➕ 7.2 Create Book (POST)
+## 7.2.1 Create Book (POST)
 
 POST http://localhost:8080/api/books
 
@@ -214,6 +215,30 @@ Authorization: Basic Auth (admin / admin123)
 }
 
 ---
+
+## 7.2.2 Pagination (GET)
+1️⃣ ➕ Add Sample Books First
+Ensure you have at least 5–6 books in your database using multiple requests:
+
+2️⃣ 📄 Get First Page (Books 1–3)
+GET http://localhost:8080/api/books?page=0&size=3
+
+3️⃣ 📄 Get Second Page (Books 4–6)
+GET http://localhost:8080/api/books?page=1&size=3
+
+4️⃣ 📄 Get Third Page (Books 7–9)
+GET http://localhost:8080/api/books?page=2&size=3
+
+🧠 Notes
+- page=0 → First page
+- page=1 → Second page
+- page=2 → Third page
+- size=3 → Items per page
+- Pagination starts from 0
+- Make sure you fill the Params key and value correctly in Postman:
+    > Key: page → Value: 0
+    > Key: size → Value: 3
+
 
 ## 📚 7.3 Get All Books (GET)
 
